@@ -10,15 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110416161704) do
+ActiveRecord::Schema.define(:version => 20110419044522) do
 
   create_table "tickets", :force => true do |t|
     t.integer  "ticket_id"
     t.text     "description"
     t.datetime "revision"
-    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.boolean  "ok",          :default => false, :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "crypt_password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "salt"
   end
 
 end

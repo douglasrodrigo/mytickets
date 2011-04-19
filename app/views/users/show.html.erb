@@ -1,0 +1,23 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+	<%= gravatar_image_tag @user.email, :class => "gravatar" %>
+        <%= @user.name %>
+      </h1>
+      <%= link_to "New ticket", new_ticket_path, :class => "ticket_button round" %>
+
+      <% unless @user.tickets.empty? %>
+        <table class="tickets" summary="User tickets">
+          <%= render @tickets %>
+        </table>
+        <%= will_paginate @tickets %>
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <strong>Tickets to revise:</strong> <%= @user.revision_tickets.count %>
+      <br/>
+      <strong>Closed tickets:</strong> <%= @user.closed_tickets.count %>
+    </td>
+  </tr>
+</table>

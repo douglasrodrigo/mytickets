@@ -29,3 +29,14 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'webrat'
+  gem 'factory_girl_rails'
+end
+
+gem 'gravatar_image_tag'
+
+gem 'will_paginate'

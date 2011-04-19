@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ticket_id %><br />
+    <%= f.label :ticket_id, "ID" %><br />
     <%= f.text_field :ticket_id %>
   </div>
   <div class="field">
@@ -24,8 +24,8 @@
     <%= f.datetime_select :revision %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.label :ok %>
+    <%= f.check_box :ok, :label => false  %>
   </div>
   <div class="actions">
     <%= f.submit %>

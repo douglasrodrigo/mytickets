@@ -1,0 +1,18 @@
+<tr>
+  <td class="ticket">
+    <b>Ticket:</b>
+    <%= link_to "#{ticket.ticket_id}" , edit_ticket_path(ticket) %></li>
+
+    <div style="float:right">
+      <b>Status:</b>
+      <%= ticket.status %>
+    </div>
+    <br/>
+    <b>Revision:</b>
+    <%= ticket.revision.to_s(:pretty) %>
+    <br/>
+    <b>Description:</b>
+    <%= ticket.description %>
+    <br/>
+  </td>
+</tr>

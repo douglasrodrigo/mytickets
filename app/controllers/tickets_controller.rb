@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy]
+  before_filter :authenticate
 
   def new
     @ticket = Ticket.new
@@ -18,8 +18,11 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket = Ticket.find(params[:id])
-    @ticket.destroy
+    ticket = Ticket.find(params[:id])
+    ticket.destroy
+
+    flash[:success] = "Ticket deleted."
+    redirect_to current_user
   end
 
   def show

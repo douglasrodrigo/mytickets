@@ -3,7 +3,7 @@ class Ticket < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :user_id, :presence => true
+  validates_presence_of :user_id, :ticket_id, :description, :revision
 
   default_scope :order => 'tickets.revision asc'
 
